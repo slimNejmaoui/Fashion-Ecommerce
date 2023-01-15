@@ -1,0 +1,103 @@
+<div class="product_image_area" style="margin-bottom:120px ;">
+    <div class="container">
+        <div class="row s_product_inner">
+            <div class="col-lg-6">
+                <div class="s_product_img">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img [src]="product.avatar" style="width:400px ; height: 400px;">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+                <div class="s_product_text">
+                    <h3>{{product.description}}</h3>
+                    <span [ngClass]="{'beginn':color (product.price)==1,
+                        junior:color (product.price)==2,
+                        senior:color(product.price)==3 }">{{product.price}}</span>
+                    <ul class="list">
+                        <li>
+                            <a class="active" href="#">
+                                <span>Category</span> : {{product.categorie}}</a>
+                        </li>
+                        <li>
+                            <a class="active" href="#">
+                                <span>Quantity</span>{{product.quantity}}</a>
+                        </li>
+                        <li>
+                            <a href="#"> <span>Availibility</span> : In Stock</a>
+                        </li>
+                    </ul>
+                    <p>
+                        Mill Oil is an innovative oil filled radiator with the most
+                        modern technology. If you are looking for something that can
+                        make your interior look awesome, and at the same time give you
+                        the pleasant warm feeling during the winter.
+                    </p>
+                    <div class="product_count">
+                        <form class="row tracking_form" [formGroup]="commandeForm">
+                            <label for="qty">Quantity:</label>
+                            <input type="number" formControlName="quantity" name="quantity" class="input-text qty" />
+                            <div
+                                *ngIf="commandeForm.controls['quantity'].invalid && (commandeForm.controls['quantity'].touched || commandeForm.controls['quantity'].dirty )  ">
+                                <div *ngIf="commandeForm.controls['quantity'].errors.required">
+                                    quantity is required
+                                </div>
+                                <div *ngIf="commandeForm.controls['quantity'].errors.min">
+                                    quantity is must have at leats 1
+                                </div>
+
+
+                            </div>
+
+                        </form>
+                    </div>
+                    <div>
+
+                        <div class="text-center" style="margin-right:120% ;">
+                            <span *ngFor="let placement of placements; trackBy: trackByValue">
+                                <button class="btn btn-outline-primary" mwlConfirmationPopover
+                                    [popoverTitle]="popoverTitle" [popoverMessage]="popoverMessage"
+                                    [confirmText]="confirmText" [cancelText]="cancelText" [placement]="bottom"
+                                    (confirm)="confirmClicked = true" (cancel)="cancelClicked = true"
+                                    confirmButtonType="success" cancelButtonType="outline-secondary"
+                                    (click)="confirmClicked = false; cancelClicked = false" [appendToBody]="true">
+                                    {{ placement }}
+                                </button>
+
+                            </span>
+
+                        </div>
+
+                        <br />
+
+                        <div class="alert alert-info" [hidden]="!confirmClicked">
+                            You clicked confirm!
+                        </div>
+                        <div class="alert alert-info" [hidden]="!cancelClicked">You cancelled!</div>
+
+                        <div class="card_area">
+                            <a class="main_btn" [hidden]="!confirmClicked" (click)="AddCommande()">Add
+                                to Cart</a>
+                            <span>{{msg}} {{Quantity}}</span>
+
+
+                            <a class="icon_btn" href="#">
+                                <i class="lnr lnr lnr-diamond"></i>
+                            </a>
+                            <a class="icon_btn" href="#">
+                                <i class="lnr lnr lnr-heart"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

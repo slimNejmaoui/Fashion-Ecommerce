@@ -1,0 +1,44 @@
+<form action="">
+
+    <div class="form-group">
+        <input type="text-center" class="form-control" [(ngModel)]="term" name="value"
+            style="margin: 20px; width: 90% ; ;" placeholder="Search" />
+    </div>
+
+
+</form>
+
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">firstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">email</th>
+
+            <th scope="col">statut</th>
+            <th scope="col">images</th>
+            <th scope="col">Action</th>
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users | filtre:term ">
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.statut}}<input type="checkbox" id="cb1" ng-click="checkAll($event.target.checked)" /></td>
+            <td><img [src]="user.avatar" style="width:60px ; height: 60px;"></td>
+            <td>
+                <button class="btn btn-success " (click)="gotoDisplay(user._id)">display</button>
+                <button class="btn btn-warning" (click)="gotoEdit(user._id)">statut</button>
+                <button class="btn btn-danger " (click)="deleteMatch(user._id)">Delete</button>
+
+            </td>
+
+
+        </tr>
+    </tbody>
+</table>

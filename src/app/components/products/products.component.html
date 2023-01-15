@@ -1,0 +1,131 @@
+<section class="cat_product_area section_gap">
+    <div class="container">
+        <div class="row flex-row-reverse">
+            <div class="col-lg-9">
+                <div class="product_top_bar">
+                    <div class="left_dorp">
+
+
+
+                        <select class="show" [(ngModel)]="term">
+                            <option value="">All categorie</option>
+                            <option value="Homme">Homme</option>
+                            <option value="Femme">Femme</option>
+                            <option value="Enfant">Enfant</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="latest_product_inner">
+                    <div class="row">
+                        <div *ngFor="let item of T | filtreCategorie :term " class="col-lg-4 col-md-6">
+                            <app-one-inspired [oneProduct]="item"></app-one-inspired>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="left_sidebar_area">
+                    <aside class="left_widgets p_filter_widgets">
+                        <div class="l_w_title">
+                            <h3>Browse Categories</h3>
+                        </div>
+                        <div class="widgets_inner">
+                            <ul class="list" class="show">
+                                <li>
+                                    <a value="Homme">Homme</a>
+                                </li>
+                                <li>
+                                    <a>Femme</a>
+                                </li>
+                                <li>
+                                    <a>Enfant</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <aside class="left_widgets p_filter_widgets">
+                        <div class="l_w_title">
+                            <h3>Product Brand</h3>
+                        </div>
+                        <div class="widgets_inner">
+                            <ul class="list">
+                                <li>
+                                    <a href="#">Apple</a>
+                                </li>
+                                <li>
+                                    <a href="#">Asus</a>
+                                </li>
+                                <li class="active">
+                                    <a href="#">Gionee</a>
+                                </li>
+                                <li>
+                                    <a href="#">Micromax</a>
+                                </li>
+                                <li>
+                                    <a href="#">Samsung</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <aside class="left_widgets p_filter_widgets">
+                        <div class="l_w_title">
+                            <h3>Color Filter</h3>
+                        </div>
+                        <div class="widgets_inner">
+                            <ul class="list">
+                                <li>
+                                    <a href="#">Black</a>
+                                </li>
+                                <li>
+                                    <a href="#">Black Leather</a>
+                                </li>
+                                <li class="active">
+                                    <a href="#">Black with red</a>
+                                </li>
+                                <li>
+                                    <a href="#">Gold</a>
+                                </li>
+                                <li>
+                                    <a href="#">Spacegrey</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <aside class="left_widgets p_filter_widgets">
+                        <div class="l_w_title">
+                            <h3>Price Filter</h3>
+                        </div>
+                        <div class="widgets_inner">
+                            <div class="range_item">
+                                <div id="slider-range"></div>
+                                <div class="">
+                                    <label for="amount">Price : </label>
+                                    <input type="text" id="amount" readonly />
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+            </div>
+
+            <div class="container mt-5 " style="margin-left: 50%; ">
+
+                <jw-pagination [items]="T" (changePage)="onChangePage($event)" [pageSize]="9"></jw-pagination>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

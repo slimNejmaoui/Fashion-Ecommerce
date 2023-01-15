@@ -1,0 +1,110 @@
+<section class="offer_area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="offset-lg-4 col-lg-6 text-center">
+                <div class="offer_content">
+                    <h2 class="text-uppercase mb-40">Add products </h2>
+                    <h3 class="text-uppercase">50% off</h3>
+                    <a href="#" class="main_btn mb-20 mt-5">Discover Now</a>
+                    <p>Limited Time Offer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="tracking_box_area section_gap">
+    <div class="container">
+        <div class="tracking_box_inner">
+
+            <form class="row tracking_form" [formGroup]="productForm">
+                <div class="col-md-10 form-group">
+                    <input type="text" class="form-control border border-secondary rounded-right"
+                        formControlName="description" placeholder="description">
+                </div>
+                <div
+                    *ngIf="productForm.controls['description'].invalid && (productForm.controls['description'].touched || productForm.controls['description'].dirty )  ">
+                    <div *ngIf="productForm.controls['description'].errors.required">
+                        description is required
+                    </div>
+                    <div *ngIf="productForm.controls['description'].errors.minlength">
+                        description is must have at leats 3 chars
+                    </div>
+                    <div *ngIf="productForm.controls['description'].errors.maxlength">
+                        description is must have at leats 20 chars
+                    </div>
+
+                </div>
+                <div class="input-group col-md-10 form-group">
+
+                    <select class="form-control border border-secondary rounded-right" formControlName="categorie"
+                        id="inputGroupSelect02">
+
+                        <option value="Homme">Homme</option>
+                        <option value="Femme">Femme</option>
+                        <option value="Enfant">Enfant</option>
+                    </select>
+                    <div class="input-group-append">
+                        <label class="input-group-text" for="inputGroupSelect02">Categorie</label>
+                    </div>
+                </div>
+
+                <div
+                    *ngIf="productForm.controls['categorie'].invalid && (productForm.controls['categorie'].touched || productForm.controls['categorie'].dirty )  ">
+                    <div *ngIf="productForm.controls['categorie'].errors.required">
+                        description is required
+                    </div>
+
+
+                </div>
+                <div class="col-md-10 form-group">
+                    <input type="number" class="form-control border border-secondary rounded-right"
+                        formControlName="price" placeholder="price">
+                </div>
+                <div
+                    *ngIf="productForm.controls['price'].invalid && (productForm.controls['price'].touched || productForm.controls['price'].dirty )  ">
+                    <div *ngIf="productForm.controls['price'].errors.required">
+                        price is required
+                    </div>
+                    <div *ngIf="productForm.controls['price'].errors.min">
+                        price is must have at leats 1
+                    </div>
+
+                </div>
+                <div class="col-md-10 form-group">
+                    <input type="number" class="form-control border border-secondary rounded-right"
+                        formControlName="quantity" placeholder="Quantity">
+                </div>
+                <div
+                    *ngIf="productForm.controls['quantity'].invalid && (productForm.controls['quantity'].touched || productForm.controls['quantity'].dirty )  ">
+                    <div *ngIf="productForm.controls['quantity'].errors.required">
+                        quantity is required
+                    </div>
+                    <div *ngIf="productForm.controls['quantity'].errors.min">
+                        quantity is must have at leats 1
+                    </div>
+
+
+                </div>
+                <div>
+                    <button class="main_btn mb-10 mt-2 " (click)="filepicker.click()" style="margin-left:9px ; ">
+                        select your
+                        avatar</button>
+                </div>
+                <div class="form-group" style="visibility: hidden ;">
+                    <input type="file" class="form-control" #filepicker (change)='onImageSelected($event)'
+                        placeholder="fichier" />
+                </div>
+
+                <div style="margin-bottom: 120px ;">
+                    <img [src]="imagePreview " style="width:200px ; height:200px" *ngIf="imagePreview " alt="Avatar">
+                </div>
+
+                <div class="col-md-10 form-group">
+                    <button type="submit" value="submit" class="main_btn mb-20 mt-0" (click)="addProduct()">Add
+                        Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

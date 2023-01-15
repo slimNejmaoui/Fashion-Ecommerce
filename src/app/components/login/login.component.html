@@ -1,0 +1,49 @@
+<section class="offer_area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="offset-lg-4 col-lg-6 text-center">
+                <div class="offer_content">
+                    <h2 class="text-uppercase mb-40  text-green">Login </h2>
+                    <a (click)="userObj()" class="main_btn mb-20 mt-5">registre now</a>
+                    <p>Limited Time Offer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="tracking_box_area section_gap">
+    <div class="container">
+        <div class="tracking_box_inner">
+
+            <form class="row tracking_form" #loginForm="ngForm" (ngSubmit)="login()">
+                <div class="col-md-10 form-group">
+                    <input type="text" class="form-control" placeholder="Email" [(ngModel)]="user.email" name="email"
+                        #email="ngModel" [ngClass]="{ 'is-invalid': loginForm.submitted && email.invalid }" required
+                        email>
+                    <div *ngIf="loginForm.submitted && email.invalid"
+                        class="form-control border border-secondary rounded-right">
+                        <p *ngIf="email.errors.required">email is required</p>
+                        <p *ngIf="email.errors.email">email is invalid</p>
+                    </div>
+                </div>
+
+                <div class="col-md-10 form-group">
+                    <input type="text" class="form-control" placeholder="Password" name="pwd" [(ngModel)]="user.pwd"
+                        #pwd="ngModel" [ngClass]="{ 'is-invalid': loginForm.submitted && pwd.invalid }" required>
+                    <div *ngIf="loginForm.submitted && pwd.invalid"
+                        class="form-control border border-secondary rounded-right">
+                        <p *ngIf="pwd.errors.required">password is required</p>
+                    </div>
+                </div>
+
+
+                <div class="col-md-10 form-group">
+                    <button type="submit" value="submit" class="main_btn mb-20 mt-1">login</button>
+                </div><br>
+                <h4 class="  text text-dark ">{{errorMsg}}</h4>
+
+            </form>
+        </div>
+    </div>
+</section>

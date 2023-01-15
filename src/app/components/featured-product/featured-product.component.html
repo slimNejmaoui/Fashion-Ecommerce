@@ -1,0 +1,24 @@
+<section class="feature_product_area section_gap_bottom_custom">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="main_title">
+                    <h2><span>Featured product</span></h2>
+                    <p>Bring called seed first of third give itself now ment</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div *ngFor="let object  of pageOfItems" class="col-lg-4 col-md-6">
+                <app-single-product [SingleInput]="object"></app-single-product>
+            </div>
+
+
+        </div>
+        <div class="container " style="margin-left: 160%;">
+
+            <jw-pagination [items]="T" (changePage)="onChangePage($event)" [pageSize]="3"></jw-pagination>
+        </div>
+    </div>
+</section>
