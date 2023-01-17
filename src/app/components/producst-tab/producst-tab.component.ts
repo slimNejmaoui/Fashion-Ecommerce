@@ -11,6 +11,8 @@ export class ProducstTabComponent implements OnInit {
   T: any;
   pageOfItems: Array<any>;
 
+  term: string
+
   constructor(private productServices: ProductService, private route: Router) { }
 
   ngOnInit() {

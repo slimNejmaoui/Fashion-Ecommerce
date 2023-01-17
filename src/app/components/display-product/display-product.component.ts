@@ -6,18 +6,7 @@ import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-display-product',
-  template: `
-  <button
-    class="btn btn-outline-secondary"
-    mwlConfirmationPopover
-    [popoverTitle]="popoverTitle"
-    [popoverMessage]="popoverMessage"
-    (confirm)="confirmClicked = true"
-    (cancel)="cancelClicked = true"
-  >
-    Click me!
-  </button>
-`,
+
   templateUrl: './display-product.component.html',
   styleUrls: ['./display-product.component.css']
 })
@@ -47,6 +36,7 @@ export class DisplayProductComponent implements OnInit {
   quantity: string;
   msg: string;
   Quantity: string;
+  bottom: string
 
   constructor(private activatedRoute: ActivatedRoute,
     private productServices: ProductService,
@@ -115,15 +105,15 @@ export class DisplayProductComponent implements OnInit {
 
   color(a: number) {
     if (a > 20 && a < 120) {
-      return "1";
+      return 1;
 
     }
     else if (a >= 121 && a < 300) {
-      return "2";
+      return 2;
     }
     else {
 
-      return "3";
+      return 3;
     }
 
 

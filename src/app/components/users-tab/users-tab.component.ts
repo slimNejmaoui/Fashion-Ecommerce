@@ -13,7 +13,7 @@ export class UsersTabComponent implements OnInit {
   users: any = [];
   id: any;
   user: any;
-
+  term: string
 
   constructor(private usersService: UserService, private route: Router, private activatedRoute: ActivatedRoute, private changeServices: ChangeService) { }
 

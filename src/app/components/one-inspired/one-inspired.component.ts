@@ -42,15 +42,15 @@ export class OneInspiredComponent implements OnInit {
 
   color(a: number) {
     if (a > 20 && a < 120) {
-      return "1";
+      return 1;
 
     }
     else if (a >= 130 && a < 300) {
-      return "2";
+      return 2;
     }
     else {
 
-      return "3";
+      return 3;
     }
 
 

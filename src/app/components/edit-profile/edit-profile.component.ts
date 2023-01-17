@@ -15,6 +15,7 @@ export class EditProfileComponent implements OnInit {
   signupForm: FormGroup;
   path: any;
   imagePreview: string;
+  adminIsAuthenticated: boolean;
 
   constructor(private activatedRoute: ActivatedRoute,
     private route: Router,
