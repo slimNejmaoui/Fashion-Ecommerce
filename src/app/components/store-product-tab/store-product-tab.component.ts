@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductService } from '../services/product.service';
-import { StoreService } from '../services/store.service';
+import { ProductService } from 'src/app/services/product.service';
+import { StoreService } from 'src/app/services/store.service';
 
 @Component({
   selector: 'app-store-product-tab',

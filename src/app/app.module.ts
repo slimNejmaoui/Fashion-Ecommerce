@@ -25,7 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { UsersTabComponent } from './components/users-tab/users-tab.component';
 import { ProducstTabComponent } from './components/producst-tab/producst-tab.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 import { DisplayProductComponent } from './components/display-product/display-product.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
@@ -38,13 +38,13 @@ import { AdminCommandeComponent } from './components/admin-commande/admin-comman
 import { FiltreCategoriePipe } from './pipes/filtre-categorie.pipe';
 import { FiltrePipe } from './pipes/filtre.pipe';
 import { SortPipe } from './pipes/sort.pipe';
-import { DashboardClientComponent } from './dashboard-client/dashboard-client.component';
-import { DashboardStoreComponent } from './dashboard-store/dashboard-store.component';
-import { StoreProductTabComponent } from './store-product-tab/store-product-tab.component';
-import { StoreCommandeTabComponent } from './store-commande-tab/store-commande-tab.component';
+import { DashboardClientComponent } from './components/dashboard-client/dashboard-client.component';
+import { DashboardStoreComponent } from './components/dashboard-store/dashboard-store.component';
+import { StoreProductTabComponent } from './components/store-product-tab/store-product-tab.component';
+import { StoreCommandeTabComponent } from './components/store-commande-tab/store-commande-tab.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { BlogdetailComponent } from './components/blogdetail/blogdetail.component';
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [

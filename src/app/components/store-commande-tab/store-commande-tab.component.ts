@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CommandesService } from '../services/commandes.service';
-import { StoreService } from '../services/store.service';
+import { CommandesService } from 'src/app/services/commandes.service';
+import { StoreService } from 'src/app/services/store.service';
 
 @Component({
   selector: 'app-store-commande-tab',

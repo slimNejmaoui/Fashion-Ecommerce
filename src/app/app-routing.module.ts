@@ -8,13 +8,13 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProductsComponent } from './components/products/products.component';
 import { SignupComponent } from './components/signup/signup.component';
-import { DashboardClientComponent } from './dashboard-client/dashboard-client.component';
-import { DashboardStoreComponent } from './dashboard-store/dashboard-store.component';
+import { DashboardClientComponent } from './components/dashboard-client/dashboard-client.component';
+import { DashboardStoreComponent } from './components/dashboard-store/dashboard-store.component';
 
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { DisplayProductComponent } from './components/display-product/display-product.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 
 const routes: Routes = [
